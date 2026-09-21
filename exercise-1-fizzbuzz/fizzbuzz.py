@@ -18,9 +18,9 @@ def fizzbuzz(i):
     if num % 11 == 0:
       b = "Bang"
       flip = True
-    if flip = False:
+    if flip == False:
       print(f"{num}")
-    elif flip = True:
+    elif flip == True:
       print(f"{F}{B}{f}{b}")
 
 fizzbuzz(100)
