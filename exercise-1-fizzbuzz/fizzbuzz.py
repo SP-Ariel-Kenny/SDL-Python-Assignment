@@ -25,4 +25,6 @@ def fizzbuzz(i):
 
 # expand fizzbuzz to take user input
 i = int(input("Please enter a maximum number: "))
+# add argparse later
+
 fizzbuzz(i)
