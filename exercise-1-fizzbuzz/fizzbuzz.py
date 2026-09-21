@@ -23,5 +23,6 @@ def fizzbuzz(i):
     elif flip == True:
       print(f"{F}{B}{f}{b}")
 
+# expand fizzbuzz to take user input
 i = int(input("Please enter a maximum number: "))
 fizzbuzz(i)
