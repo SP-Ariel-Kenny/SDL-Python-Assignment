@@ -10,7 +10,7 @@ while flip == True:
   num = i ** power
   nums.append(num)
   print(f"Loop {index+1}: {i}^{power} = {num}")
-  if (nums[index] % nums[index - 1] == 0) and (index != 0):
+  if (nums[index] % nums[index - 1] == 0) and (index != 0) and (nums[index - 1] != 1):
     flip = False
   else:
     index += 1
