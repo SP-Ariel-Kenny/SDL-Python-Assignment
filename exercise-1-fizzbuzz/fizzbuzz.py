@@ -1,6 +1,6 @@
 # define fizzbuzz game
-def fizzbuzz(range):
-  for num in range:
+def fizzbuzz(i):
+  for num in range(1,i+1):
     if num % 3 == 0:
       if num % 5 == 0:
         print("FizzBuzz")
