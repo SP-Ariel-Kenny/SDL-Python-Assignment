@@ -10,12 +10,12 @@ while flip == True:
   num = i ** power
   nums.append(num)
   print(f"Loop {index+1}: {i}^{power} = {num}")
-  if nums[index] % nums[index - 1] == 0:
-    break
+  if (nums[index] % nums[index - 1] == 0) and (index != 0):
+    flip = False
   else:
     index += 1
 
-nums_sorted = nums.sort()
+nums_sorted = sorted(nums)
 
 # output data
 print(f"The largest result is {nums_sorted[-1]}")
