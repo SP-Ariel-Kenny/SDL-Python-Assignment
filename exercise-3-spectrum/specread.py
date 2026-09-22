@@ -1,7 +1,15 @@
 import csv
 import scipy as sp
 
+spec_dict = {
+  'Wavelength' : []
+  'Flux' : []
+}
 with open('spectrum.txt', 'r') as file:
   reader = csv.reader(file, delimiter=',')
   for row in reader:
-    print(row)
+    if type(row.items()) is float:
+      for key, value in row.items():
+        spec_dict[key].append(float(value))
+
+spec_dict
