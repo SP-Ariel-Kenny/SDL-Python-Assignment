@@ -1,2 +1,4 @@
 import scipy as sp
+import csv
 
+with open('spectrum.txt', 'r'):
