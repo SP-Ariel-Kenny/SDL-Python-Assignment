@@ -7,7 +7,7 @@ spec_dict = {
   'Flux' : []
 }
 with open('spectrum.txt', 'r') as file:
-  reader = csv.DictReader(file, fieldnames=spec_dict.keys())
+  reader = csv.DictReader(file)
   for row in reader:
     if type(row.items()) is float:
       for key, value in row.items():
