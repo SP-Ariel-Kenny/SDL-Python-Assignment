@@ -25,6 +25,8 @@ def fizzbuzz(i):
 
 # expand fizzbuzz to take user input
 i = int(input("Please enter a maximum number: "))
+if type(i) is not int:
+  raise ValueError: "Invalid input; please enter a number."
 # add argparse later
 
 fizzbuzz(i)
