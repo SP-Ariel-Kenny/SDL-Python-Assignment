@@ -24,14 +24,15 @@ def fizzbuzz(i):
       print(f"{F}{B}{f}{b}")
 
 # expand fizzbuzz to take user input
-i = int(input("Please enter a maximum number: "))
+i = input("Please enter a maximum number: ")
 
+# check user input to prevent ValueError
 flip = True
 while flip == True:
   try:
     i = int(i)
     fizzbuzz(i)
     flip = False
-  except VAlueError:
+  except ValueError:
     i = input("Invalid input. Please enter a maximum number: ")
 # add argparse later
