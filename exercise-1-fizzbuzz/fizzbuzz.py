@@ -15,7 +15,8 @@ def fizzbuzz(i, args):
         else:
             print(num)
 
-# parse_args function add-on done with the help of Ana Anaya
+# parse_args function add-on attempted with the help of Ana Anaya
+# i simply could not make this behave, so it currently does not get called
 def parse_args():
     if __name__ == '__main__':
         parser = argparse.ArgumentParser(description="Fizzbuzz!")
