@@ -1,38 +1,65 @@
-# define fizzbuzz game
-def fizzbuzz(i):
-  for num in range(1,i+1):
-    F = ""
-    B = ""
-    f = ""
-    b = ""
-    flip = False
-    if num % 3 == 0:
-      F = "Fizz"
-      flip = True
-    if num % 5 == 0:
-      B = "Buzz"
-      flip = True
-    if num % 7 == 0:
-      f = "Fang"
-      flip = True
-    if num % 11 == 0:
-      b = "Bang"
-      flip = True
-    if flip == False:
-      print(f"{num}")
-    elif flip == True:
-      print(f"{F}{B}{f}{b}")
+import argparse
+import sys
 
-# expand fizzbuzz to take user input
+args = {3: "Fizz", 5: "Buzz", 7: "Fang", 11: "Bang"}
+
+# define fizzbuzz game
+def fizzbuzz(i, args):
+    for num in range(1,i+1):
+        phrase = ""
+        for factor, word in args.items():
+            if num % factor == 0:
+                phrase += word
+        if phrase:
+            print(phrase)
+        else:
+            print(num)
+
+# parse_args function add-on done with the help of Ana Anaya
+def parse_args():
+    if __name__ == '__main__':
+        parser = argparse.ArgumentParser(description="Fizzbuzz!")
+        parser.add_argument("-rule", action="append", nargs=2, metavar=("Factor", "Word"))
+        args = parser.parse_args()
+        userargs = {3: "Fizz", 5: "Buzz", 7: "Fang", 11: "Bang"}
+        if args.rule:
+            for factor, word in args.rule:
+                userargs[int(factor)] = word
+
+# check if user wants custom factors and words
+def customise(i):
+    flip2 = False
+    while flip2 == False:
+        yn = input("Use custom parameters (y/n)? ")
+        yn = yn.strip().lower()
+        if yn == 'y':
+            args = {}
+            userargs = input("Input your own number and replacement word: ")
+            usernum, userword = userargs.split(" ")
+            try:
+                usernum = int(usernum)
+            except ValueError:
+                print("Failed to assign number. Please try again.")
+                customise(i)
+            args.update({usernum: userword})
+            fizzbuzz(i, args)
+            flip2 = True
+        elif yn == 'n':
+            fizzbuzz(i, args)
+            flip2 = True
+        elif yn != 'y' and yn != 'n':
+            print("Invalid input.")
+            customise(i)
+
+# take and check user input
 i = input("Please enter a maximum number: ")
 
-# check user input to prevent ValueError
-flip = True
-while flip == True:
-  try:
-    i = int(i)
-    fizzbuzz(i)
-    flip = False
-  except ValueError:
-    i = input("Invalid input. Please enter a maximum number: ")
-# add argparse later
+flip1 = False
+while flip1 == False:
+    try:
+        i = int(i)
+        flip1 = True
+    except ValueError:
+        i = input("Invalid input. Please enter a maximum number: ")
+if flip1 == True:
+    customise(i)
