@@ -1,4 +1,3 @@
-%%writefile fizzbuzz.py
 import argparse
 import sys
 
