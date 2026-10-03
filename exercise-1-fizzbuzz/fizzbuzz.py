@@ -1,10 +1,11 @@
+%%writefile fizzbuzz.py
 import argparse
 import sys
 
 args = {3: "Fizz", 5: "Buzz", 7: "Fang", 11: "Bang"}
 
 # define fizzbuzz game
-def fizzbuzz(i, args):
+def fizzbuzz(i, args={3: "Fizz", 5: "Buzz", 7: "Fang", 11: "Bang"}):
     for num in range(1,i+1):
         phrase = ""
         for factor, word in args.items():
@@ -15,7 +16,7 @@ def fizzbuzz(i, args):
         else:
             print(num)
 
-# parse_args function add-on attempted with the help of Ana Anaya
+# parse_args function add-on done with the help of Ana Anaya
 # i simply could not make this behave, so it currently does not get called
 def parse_args():
     if __name__ == '__main__':
@@ -46,11 +47,11 @@ def customise(i):
             fizzbuzz(i, args)
             flip2 = True
         elif yn == 'n':
-            fizzbuzz(i, args)
+            fizzbuzz(i)
             flip2 = True
         elif yn != 'y' and yn != 'n':
             print("Invalid input.")
-            customise(i)
+            pass
 
 # take and check user input
 i = input("Please enter a maximum number: ")
