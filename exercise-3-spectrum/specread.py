@@ -1,3 +1,5 @@
+# first attempt by me; ignore this file in favor of Ana's task3_version1
+
 # import relevant modules
 import csv
 import scipy as sp
