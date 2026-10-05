@@ -1,4 +1,4 @@
-# this section done by Kateryna Storozhuk
+# this section done by Kateryna Storozhuk and Enrico Marchisio
 
 import numpy as np
 import matplotlib.pyplot as plt
