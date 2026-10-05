@@ -1,3 +1,5 @@
+# this section done by Ana Amaya
+
 import numpy as np
 from numpy import random as rnd
 from astropy.modeling import models, fitting
