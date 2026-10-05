@@ -1,3 +1,5 @@
+# this section done by me
+
 import random
 
 flip = True
