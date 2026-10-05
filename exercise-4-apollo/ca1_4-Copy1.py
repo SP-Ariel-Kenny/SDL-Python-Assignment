@@ -80,7 +80,7 @@ fig.delaxes(axes[11])
 plt.tight_layout()
 plt.show()
 
-pip install geodatasets
+#pip install geodatasets
 
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
